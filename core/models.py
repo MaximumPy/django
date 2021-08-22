@@ -1,3 +1,6 @@
 from django.db import models
 
-# Create your models here.
+
+class Students(models.Model):
+    name = models.CharField('Имя', max_length=255)
+    group = models.IntegerField('Номер группы', null=True, blank=True)
