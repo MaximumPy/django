@@ -22,7 +22,9 @@ import core.views
 
 urlpatterns = [
     path('', include('core.urls')),
+    path('stud/', include('core.urls')),
     path('admin/', admin.site.urls),
+
 ]
 
 

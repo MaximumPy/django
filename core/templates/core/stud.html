@@ -1,0 +1,37 @@
+{% extends 'core/index.html'%}
+
+{% block content %}
+        <form class="row g-3">
+          <div class="col-auto">
+            <input type="text" class="form-controll" placeholder="Фамилия" name="name" value="{{request.GET.name}}">
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3">Поиск</button>
+          </div>
+
+
+
+        </form>
+         <table class="table-primary">
+          <thead>
+            <tr>
+              <th scope="col">№</th>
+              <th scope="col">студент</th>
+              <th scope="col">группа</th>
+
+            </tr>
+
+          <tbody>
+
+            {% for Students in object_list %}
+              <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ Students.name }}</td>
+                <td>{{ Students.group }}</td>
+
+              </tr>
+           {% endfor %}
+          </tbody>
+        </table>
+
+{% endblock %}
